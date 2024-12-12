@@ -30,10 +30,26 @@ The same procedure can be followed for the tuned models by opening the `tuned_mo
 ## Process
 
 ### Data Cleaning and ETL
+The initial dataset was in a file called `adult.data`. This file, along with the `adult.names` file, can be found in the `Resources` section of the repository. To clean the data, we brought the `adult.data` file into Python, and turned it into a pandas DataFrame. This dataset had 14 columns: 13 of these columns were feature columns, and one was the target column of income. We did some cursory investigation of the DataFrame to make sure that its data types were correct, that it didn’t have any null values, and that the target column was properly binary. Unnecessary columns were dropped, the target column was formatted to have values of 0 or 1, and the DataFrame was exported as a csv titled `cleaned_df.csv`. The notebook for this data cleaning is titled `data_cleaning.ipynb`, and can be found in the `Notebooks` folder in the repository. The `.csv` file which it outputs can be found in the `Resources` folder in the repository.
+
+As part of the ETL pipeline for this model, the cleaned `.csv` was, in a new notebook, loaded into a Spark DataFrame. This Spark DataFrame was then converted to a pandas DataFrame for easier manipulation. We could then convert categorical columns, such as ‘workclass’, ‘marital-status’, and ‘native-country’, to numerical columns using the `get_dummies` method. We split the data into a target and a feature array, and then used `train_test_split` to split the data into training and testing sets. We normalized the data with `StandardScaler`, and then fit and scaled the data.
 
 ### First Model
+For the first model, we opted for two hidden layers, both activated with `relu` functions and with 80 and 30 units, respectively. The output layer used a `sigmoid` activation function. After fitting this model with 100 epochs, we received our first accuracy and loss percentages of 83.76% and 54.26%, respectively. The code for this model, as well as for the data cleaning and ETL process, can be found in the file titled `first_model.ipynb`, located in the `Notebooks` folder.
+
+![first_model](https://github.com/user-attachments/assets/ecf54922-c83a-4303-9f57-d3e0118a157d)
 
 ### First Tuning
+Before altering the data which was fed into the model, we tried a few different tuning techniques to raise accuracy and lower loss. These techniques included:
+-	Adding Dropout to hidden layers, helping to prevent overfitting the model
+-	Reducing number of epochs from 100 to 50
+-	Adding BatchNormalization
+-	Adjusting dropout rate from 0.2 to 0.3
+-	Adding another hidden layer and increasing number of units to 128, 64, and 32
+
+These techniques led to a small increase in accuracy, with a final percentage of 85.71%, but significantly decreased loss, with a percentage of 31.42%.
+
+![tuned_model](https://github.com/user-attachments/assets/d8937edc-6008-4a25-acf9-8663c50518db)
 
 ### Further Data Cleaning
 
