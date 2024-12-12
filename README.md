@@ -11,7 +11,7 @@ To run the model, first clone the repository to your local machine, or download 
 
 Next, in your browser, navigate to Google Drive. Ensure you are ready to use Google Colaboratory. To check if you have Colaboratory prepared on your Google Drive account, click the `+ New` button at the top left of the screen, and then `More` at the bottom of the dropdown menu. If Google Colaboratory does not appear, you will need to connect it to your account by clicking the `+ Connect more apps` button. You will be directed to Google Workspace Marketplace, from which you can install Google Colaboratory. After setting it up, return to the Drive homepage.
 
-Using the leftmost sidebar, navigate to `My Drive`. Create a new folder titled `income_prediction`. The code uses specific, hard-coded file paths to retrieve the data, so it is crucial that this folder name appears exactly as it does here, and that it is stored in `My Drive`. If you care to change the path in which you store the materials for this model, make sure to update the file paths in the code accordingly.
+Using the leftmost sidebar, navigate to `My Drive`. Create a new folder titled `income_prediction`. **The code uses specific, hard-coded file paths to retrieve the data, so it is crucial that this folder name appears exactly as it does here, and that it is stored in `My Drive`.** If you care to change the path in which you store the materials for this model, make sure to update the file paths in the code accordingly.
 
 From the `Notebooks` folder in the repository, drag the files titled `first_model.ipynb`, `tuned_model.ipynb`, and `tuned_model_2.ipynb` to the `income_prediction` folder in your Google Drive.
 
@@ -35,7 +35,7 @@ The initial dataset was in a file called `adult.data`. This file, along with the
 As part of the ETL pipeline for this model, the cleaned `.csv` was, in a new notebook, loaded into a Spark DataFrame. This Spark DataFrame was then converted to a pandas DataFrame for easier manipulation. We could then convert categorical columns, such as ‘workclass’, ‘marital-status’, and ‘native-country’, to numerical columns using the `get_dummies` method. We split the data into a target and a feature array, and then used `train_test_split` to split the data into training and testing sets. We normalized the data with `StandardScaler`, and then fit and scaled the data.
 
 ### First Model
-For the first model, we opted for two hidden layers, both activated with `relu` functions and with 80 and 30 units, respectively. The output layer used a `sigmoid` activation function. After fitting this model with 100 epochs, we received our first accuracy and loss percentages of 83.76% and 54.26%, respectively. The code for this model, as well as for the data cleaning and ETL process, can be found in the file titled `first_model.ipynb`, located in the `Notebooks` folder.
+For the first model, we opted for two hidden layers, both activated with `relu` functions and with 80 and 30 units, respectively. The output layer used a `sigmoid` activation function. After fitting this model with 100 epochs, we received our first accuracy and loss percentages of **83.76%** and **54.26%**, respectively. The code for this model, as well as for the data cleaning and ETL process, can be found in the file titled `first_model.ipynb`, located in the `Notebooks` folder.
 
 ![first_model](https://github.com/user-attachments/assets/ecf54922-c83a-4303-9f57-d3e0118a157d)
 
@@ -47,7 +47,7 @@ Before altering the data which was fed into the model, we tried a few different 
 -	Adjusting dropout rate from 0.2 to 0.3
 -	Adding another hidden layer and increasing number of units to 128, 64, and 32
 
-These techniques led to a small increase in accuracy, with a final percentage of 85.71%, but significantly decreased loss, with a percentage of 31.42%.
+These techniques led to a small increase in accuracy, with a final percentage of **85.71%**, but significantly decreased loss, with a percentage of **31.42%**.
 
 ![tuned_model](https://github.com/user-attachments/assets/d8937edc-6008-4a25-acf9-8663c50518db)
 
