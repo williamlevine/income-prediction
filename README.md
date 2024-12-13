@@ -43,7 +43,7 @@ For the first model, we opted for two hidden layers, both activated with `relu` 
 Before altering the data which was fed into the model, we tried a few different tuning techniques to raise accuracy and lower loss. These techniques included:
 -	Adding Dropout to hidden layers, helping to prevent overfitting the model
 -	Reducing number of epochs from 100 to 50
--	Adding BatchNormalization
+-	Adding Batch Normalization
 -	Adjusting dropout rate from 0.2 to 0.3
 -	Adding another hidden layer and increasing number of units to 128, 64, and 32
 
