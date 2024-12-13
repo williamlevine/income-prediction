@@ -53,7 +53,14 @@ These techniques led to a small increase in accuracy, with a final percentage of
 
 ### Further Data Cleaning
 
+We decided to bin the 'native-country' column to try and help increase our accuracy score and decrease our loss. We binned this into two groups, "United States" and "Not United States". This was then turned into its own column called 'native-country-binned' and would be binary where 1 is "United States" and 0 is "Not United States". This is done to better help the model's accuracy.
+
 ### Further Tuning
+We tried a few more tuning techniques to raise accuracy and lower loss after the binning. These techniques included:
+- Added an additional hidden layer
+- Adjusted the dropout rate from 0.3 to 0.5
+- Added binning to 'native-country' column to help improve the model's accuracy
+
 
 ## Sources
 Original data set: https://archive.ics.uci.edu/dataset/2/adult
