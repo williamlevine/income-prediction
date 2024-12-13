@@ -58,9 +58,10 @@ We decided to bin the 'native-country' column to try and help increase our accur
 ### Further Tuning
 We tried a few more tuning techniques to raise accuracy and lower loss after the binning. These techniques included:
 - Added an additional hidden layer
-- Adjusted the dropout rate from 0.3 to 0.5
+- Adjusted the dropout rate from 0.3 to 0.4
 - Added binning to 'native-country' column to help improve the model's accuracy
 
+These additional techniques led to an accuracy percentage of **85.37%** and a loss percentage of **33.93%**.
 
 ## Sources
 Original data set: https://archive.ics.uci.edu/dataset/2/adult
