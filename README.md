@@ -72,5 +72,6 @@ We tried a few more tuning techniques to raise accuracy and lower loss after the
 These additional techniques led to an accuracy percentage of **85.37%** and a loss percentage of **33.93%**.
 
 ## Sources
-Original data set: https://archive.ics.uci.edu/dataset/2/adult
-Link to presentation: https://docs.google.com/presentation/d/1k-xdE3pQ5T9sHqPTefgq-JLitXQeWGGEDaLyHjvWM9U/edit?usp=sharing
+[Original data set](https://archive.ics.uci.edu/dataset/2/adult)
+
+[Presentation slides](https://docs.google.com/presentation/d/1k-xdE3pQ5T9sHqPTefgq-JLitXQeWGGEDaLyHjvWM9U/edit?usp=sharing)
